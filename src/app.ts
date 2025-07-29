@@ -2,6 +2,9 @@ import express, { urlencoded } from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import path from "path";
+import Annuncio from "./models/Annuncio";
+import annunciRouter from "./routes/annunci";
+console.log(" Modello Annuncio caricato:", Annuncio.modelName);
 
 dotenv.config();
 const app = express();
@@ -20,7 +23,7 @@ app.set("views", path.join(__dirname, "..", "views"));
 app.get("/", (req, res) => {
   res.render("home", { title: "Benvenuto su BoolBnB con TypeScript!" });
 });
-
+app.use("/annunci", annunciRouter);
 //MongoDB
 mongoose
   .connect(process.env.MONGO_URI as string)

@@ -1,0 +1,17 @@
+<h1>{{title}}</h1>
+
+{{#if annunci.length}}
+  <ul>
+    {{#each annunci}}
+      <li>
+        <h3>{{titolo}}</h3>
+        <p>{{descizione}}</p>
+        <p><strong>Prezzo:</strong> € {{prezzo}} </p>
+        <p><strong>Luogo:</strong> {{citta}}, {{indirizzo}}</p>
+        <p><strong>Ospiti:</strong> {{ospiti}}</p>
+      </li>
+    {{/each}}
+  </ul>
+{{else}}
+  <p>Nessun annuncio trovato.</p>
+{{/if}}
