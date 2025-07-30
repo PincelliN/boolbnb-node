@@ -1,17 +1,30 @@
-<h1>{{title}}</h1>
+<h2 class="text-2xl font-bold mb-6 text-center text-gray-800">Annunci
+  disponibili</h2>
 
 {{#if annunci.length}}
-  <ul>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
     {{#each annunci}}
-      <li>
-        <h3>{{titolo}}</h3>
-        <p>{{descizione}}</p>
-        <p><strong>Prezzo:</strong> € {{prezzo}} </p>
-        <p><strong>Luogo:</strong> {{citta}}, {{indirizzo}}</p>
-        <p><strong>Ospiti:</strong> {{ospiti}}</p>
-      </li>
+      <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition">
+        <h3 class="text-xl font-semibold text-blue-700 mb-2">{{titolo}}</h3>
+        <p class="text-gray-700 mb-2">{{descrizione}}</p>
+        <p class="text-sm text-gray-500"><strong>Prezzo:</strong>
+          €{{prezzo}}</p>
+        <p class="text-sm text-gray-500"><strong>Luogo:</strong>
+          {{citta}},
+          {{indirizzo}}</p>
+        <p class="text-sm text-gray-500"><strong>Ospiti:</strong> {{ospiti}}</p>
+        {{#if previewImage}}
+          <div class="mt-4">
+            <img
+              src="{{previewImage}}"
+              alt="{{titolo}}"
+              class="w-full rounded-md h-48 object-cover"
+            />
+          </div>
+        {{/if}}
+      </div>
     {{/each}}
-  </ul>
+  </div>
 {{else}}
-  <p>Nessun annuncio trovato.</p>
+  <p class="text-center text-gray-600">Nessun annuncio trovato.</p>
 {{/if}}
