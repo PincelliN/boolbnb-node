@@ -4,6 +4,8 @@ import dotenv from "dotenv";
 import path from "path";
 import Annuncio from "./models/Annuncio";
 import annunciRouter from "./routes/annunci";
+import { create } from "express-handlebars";
+
 console.log(" Modello Annuncio caricato:", Annuncio.modelName);
 
 dotenv.config();
@@ -16,6 +18,14 @@ app.use(urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "..", "public")));
 
 // view Engine
+const hbs = create({
+  extname: "hbs",
+  defaultLayout: "index",
+  layoutsDir: path.join(__dirname, "..", "views", "layouts"),
+});
+
+app.engine("hbs", hbs.engine);
+
 app.set("view engine", "hbs");
 app.set("views", path.join(__dirname, "..", "views"));
 
