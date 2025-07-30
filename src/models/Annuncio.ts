@@ -5,7 +5,7 @@ export interface IAnnucio extends Document {
   titolo: string;
   descrizione: string;
   prezzo: number;
-  città: string;
+  citta: string;
   indirizzo: string;
   ospiti: number;
   servizi: string[];
@@ -19,7 +19,7 @@ const AnnuncioSchema: Schema = new Schema(
     titolo: { type: String, required: true },
     descrizione: { type: String, required: true },
     prezzo: { type: Number, required: true },
-    città: { type: String, required: true },
+    citta: { type: String, required: true },
     indirizzo: { type: String, required: true },
     ospiti: { type: Number, required: true },
     servizi: [{ type: String }],
