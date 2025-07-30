@@ -1,0 +1,99 @@
+<h2 class="text-2xl font-bold mb-6 text-center text-grey-800">
+  Crea un nuovo annuncio</h2>
+
+<form
+  action="/annunci"
+  method="post"
+  class="max-w-2xl mx-auto bg-white p-6 rounded-lg shadow-md space-y-4"
+>
+  <div>
+    <label class="block font-medium mb-1">Titolo</label>
+    <input
+      type="text"
+      name="titolo"
+      required
+      class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:border-blue-400"
+    />
+  </div>
+
+  <div>
+    <label class="block font-medium mb-1">Descrizione</label>
+    <textarea
+      name="descrizione"
+      required
+      class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:border-blue-400"
+    ></textarea>
+  </div>
+
+  <div class="grid grid-cols-2 gap-4">
+    <div>
+      <label class="block font-medium mb-1">Prezzo (€)</label>
+      <input
+        type="number"
+        name="prezzo"
+        required
+        class="w-full border border-gray-300 rounded px-3 py-2"
+      />
+    </div>
+
+    <div>
+      <label class="block font-medium mb-1">Ospiti</label>
+      <input
+        type="number"
+        name="ospiti"
+        required
+        class="w-full border border-gray-300 rounded px-3 py-2"
+      />
+    </div>
+  </div>
+
+  <div class="grid grid-cols-2 gap-4">
+    <div>
+      <label class="block font-medium mb-1">citta</label>
+      <input
+        type="text"
+        name="citta"
+        required
+        class="w-full border border-gray-300 rounded px-3 py-2"
+      />
+    </div>
+
+    <div>
+      <label class="block font-medium mb-1">Indirizzo</label>
+      <input
+        type="text"
+        name="indirizzo"
+        required
+        class="w-full border border-gray-300 rounded px-3 py-2"
+      />
+    </div>
+  </div>
+
+  <div>
+    <label class="block font-medium mb-1">Servizi (separati da virgola)</label>
+    <input
+      type="text"
+      name="servizi"
+      class="w-full border border-gray-300 rounded px-3 py-2"
+    />
+  </div>
+
+  <div>
+    <label class="block font-medium mb-1">Immagini (URL separati da virgola)</label>
+    <input
+      type="text"
+      name="immagini"
+      class="w-full border border-gray-300 rounded px-3 py-2"
+    />
+  </div>
+
+  <div class="text-right">
+    <button
+      type="submit"
+      class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
+    >
+      Salva Annuncio
+    </button>
+  </div>
+
+</form>
